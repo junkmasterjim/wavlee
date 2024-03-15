@@ -55,3 +55,30 @@ function Cube() {
 		</mesh>
 	);
 }
+
+const DesktopCube = ({ className }: { className?: string }) => {
+	return (
+		<div className="sm:col-span-2 hidden col-span-3 items-center w-full place-self-center sm:-mt-36 sm:flex flex-col">
+			<HeroCube />
+			<p className="mt-4 text-center font-medium text-xs text-muted-foreground pointer-events-none select-none">
+				Albums I&apos;ve produced on.
+				<br />
+				<span>Drag me!</span>
+			</p>
+		</div>
+	);
+};
+const MobileCube = ({ className }: { className?: string }) => {
+	return (
+		<div className="sm:col-span-2 sm:hidden col-span-3 items-center w-full place-self-center sm:-mt-36 flex flex-col">
+			<HeroCube />
+			<p className="mt-4 text-center font-medium text-xs text-muted-foreground pointer-events-none select-none">
+				Albums I&apos;ve produced on.
+				<br />
+				<span>Drag me!</span>
+			</p>
+		</div>
+	);
+};
+
+export { DesktopCube, MobileCube };

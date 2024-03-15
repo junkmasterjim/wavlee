@@ -2,7 +2,7 @@ import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import Link from "next/link";
-import { HeroCube } from "./cube";
+import { DesktopCube, HeroCube, MobileCube } from "./cube";
 
 function Hero() {
 	return (
@@ -72,15 +72,7 @@ function Hero() {
 					</a>
 				</div>
 				<Separator />
-				{/* Mobile Cube */}
-				<div className="sm:col-span-2 sm:hidden col-span-3 items-center w-full place-self-center sm:-mt-36 flex flex-col">
-					<HeroCube />
-					<p className="mt-4 text-center font-medium text-xs text-muted-foreground pointer-events-none select-none">
-						Albums I've produced on.
-						<br />
-						<span>Drag me!</span>
-					</p>
-				</div>
+				<MobileCube />
 				<iframe
 					className="h-96 w-full opacity-75 border rounded-xl border-muted bg-muted"
 					src="https://open.spotify.com/embed/playlist/5eWcwIimPSFiJdN0RD5i3P?utm_source=generator&theme=0"
@@ -89,16 +81,7 @@ function Hero() {
 					loading="eager"
 				/>
 			</div>
-
-			{/* Desktop Cube */}
-			<div className="sm:col-span-2 hidden col-span-3 items-center w-full place-self-center sm:-mt-36 sm:flex flex-col">
-				<HeroCube />
-				<p className="mt-4 text-center font-medium text-xs text-muted-foreground pointer-events-none select-none">
-					Albums I've produced on.
-					<br />
-					<span>Drag me!</span>
-				</p>
-			</div>
+			<DesktopCube />
 		</section>
 	);
 }
