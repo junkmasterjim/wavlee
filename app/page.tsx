@@ -1,11 +1,7 @@
 import { Hero } from "@/components/hero";
 
 const Home = () => {
-	return (
-		<main className="relative">
-			<Hero />
-		</main>
-	);
+	return <Hero />;
 };
 
 export default Home;

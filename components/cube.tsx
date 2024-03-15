@@ -3,12 +3,26 @@
 // Import necessary dependencies
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { OrbitControls } from "@react-three/drei";
 
 // Define the Cube component
 const HeroCube = ({ className }: { className?: string }) => {
+	const [isMounted, setIsMounted] = useState(false);
+
+	useEffect(() => {
+		// Set isMounted to true once the component is mounted
+		setIsMounted(true);
+	}, []);
+
+	if (!isMounted)
+		return (
+			<span className="text-muted-foreground animate-pulse">
+				Loading Artwork...
+			</span>
+		);
+
 	return (
 		<Canvas className={cn("aspect-square", className)}>
 			<OrbitControls enableZoom={false} enablePan={false} />
@@ -63,7 +77,7 @@ const DesktopCube = ({ className }: { className?: string }) => {
 			<p className="mt-4 text-center font-medium text-xs text-muted-foreground pointer-events-none select-none">
 				Albums I&apos;ve produced on.
 				<br />
-				<span>Drag me!</span>
+				<span>Interact with the cube!</span>
 			</p>
 		</div>
 	);
@@ -75,7 +89,7 @@ const MobileCube = ({ className }: { className?: string }) => {
 			<p className="mt-4 text-center font-medium text-xs text-muted-foreground pointer-events-none select-none">
 				Albums I&apos;ve produced on.
 				<br />
-				<span>Drag me!</span>
+				<span>Interact with the cube!</span>
 			</p>
 		</div>
 	);
