@@ -42,7 +42,7 @@ function Navbar() {
 							height={48}
 							width={48}
 							className="size-10 rounded-full object-cover border-2 border-primary"
-							src={"/wav_portrait.jpeg"}
+							src={"/wav_portrait.jpg"}
 							alt="Wav Lee"
 						/>
 					</motion.div>
