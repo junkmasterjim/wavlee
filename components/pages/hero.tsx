@@ -1,8 +1,8 @@
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import { Button } from "./ui/button";
-import { Separator } from "./ui/separator";
+import { Button } from "../ui/button";
+import { Separator } from "../ui/separator";
 import Link from "next/link";
-import { DesktopCube, HeroCube, MobileCube } from "./cube";
+import { DesktopCube, HeroCube, MobileCube } from "../cube";
 
 function Hero() {
 	return (

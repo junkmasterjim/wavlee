@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Separator } from "./ui/separator";
+import { Separator } from "../ui/separator";
 import { motion } from "framer-motion";
 
 function BeatsPage() {
