@@ -1,3 +1,5 @@
+"use client";
+import CalendlyButton from "@/components/calendly-button";
 import {
 	Accordion,
 	AccordionContent,
@@ -78,17 +80,11 @@ const Page = () => {
 						Book a session with me! Frequently asked questions are answered
 						below.
 					</p>
-					<Button
-						className="md:text-base border-muted/50 bg-muted/10 backdrop-blur-sm"
-						variant={"outline"}
-						size={"sm"}
-					>
-						Book a Session
-					</Button>
+					<CalendlyButton />
 				</span>
 				<Separator className="mt-4" />
 			</div>
-			<div className="mt-8 grid lg:grid-flow-col grid-flow-row gap-4 auto-cols-fr">
+			<div className="mt-8 grid lg:grid-flow-col grid-flow-row lg:gap-4 gap-16  auto-cols-fr">
 				<div className="max-w-prose">
 					<Accordion type="single" collapsible>
 						<h3 className="text-2xl sm:text-3xl leading-relaxed text-foreground font-semibold mb-4">
@@ -128,10 +124,16 @@ const Page = () => {
 						))}
 					</Accordion>
 				</div>
-				<div className="max-w-prose space-y-4">
-					<div>
-						<h1>Still have questions?</h1>
-						<h2>Contact me!</h2>
+				<Separator className="lg:hidden block" />
+				<div className="space-y-4 w-full">
+					<div className="max-w-prose">
+						<h3 className="text-2xl sm:text-3xl leading-none text-foreground font-semibold mb-4">
+							Still have questions?
+						</h3>
+						<p className="text-muted-foreground leading-none">
+							Feel free to reach out to me with any questions or concerns.
+							I&apos;m always happy to help!
+						</p>
 					</div>
 					<div className="aspect-video bg-accent rounded flex justify-center items-center">
 						Contact Form Here
