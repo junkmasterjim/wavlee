@@ -78,8 +78,9 @@ const Page = () => {
 						below.
 					</p>
 					<Button
-						className="text-base border-muted/50 bg-muted/10 backdrop-blur-sm"
+						className="md:text-base border-muted/50 bg-muted/10 backdrop-blur-sm"
 						variant={"outline"}
+						size={"sm"}
 					>
 						Book a Session
 					</Button>
@@ -94,7 +95,9 @@ const Page = () => {
 						</h3>
 						{FAQ.map((item, i) => (
 							<AccordionItem className="border-muted" key={i} value={`${i}`}>
-								<AccordionTrigger>{item.q}</AccordionTrigger>
+								<AccordionTrigger className="text-start">
+									{item.q}
+								</AccordionTrigger>
 								{item.a instanceof Array ? (
 									<AccordionContent>
 										<ul>

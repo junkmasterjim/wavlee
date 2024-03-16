@@ -16,9 +16,8 @@ const Page = () => {
 				<Separator className="mt-8" />
 			</div>
 
-			<div className="flex mt-8 gap-3 flex-wrap justify-stretch">
+			<div className="flex mt-8 gap-3 flex-wrap sm:justify-stretch justify-center">
 				{/* Card */}
-				<ProductCard />
 				<ProductCard />
 				<ProductCard />
 				<ProductCard />
