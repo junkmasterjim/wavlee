@@ -39,15 +39,8 @@ function Navbar() {
 		<nav className="w-full fixed z-20 inset-0 shadow backdrop-blur bg-background/50 h-16 shadow-accent/50">
 			<div className="flex w-full h-full justify-between items-center container">
 				{/* Logo */}
-				<Link href="/" className="flex items-center gap-4 select-none">
-					<motion.div
-						initial={{
-							rotate: 0,
-							scale: 1,
-						}}
-						whileHover={{ rotate: 10, scale: 1.2 }}
-						transition={{ type: "spring", duration: 0.5 }}
-					>
+				<Link href="/" className="flex items-center gap-4 select-none group">
+					<div className="group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 ease-in-out">
 						<Image
 							height={48}
 							width={48}
@@ -55,7 +48,7 @@ function Navbar() {
 							src={"/wav_portrait.jpg"}
 							alt="Wav Lee"
 						/>
-					</motion.div>
+					</div>
 					<p className={"text-2xl font-semibold"}>Wav Lee</p>
 				</Link>
 
