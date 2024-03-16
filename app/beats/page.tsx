@@ -1,4 +1,4 @@
-import { BeatsPage } from "@/components/beats";
+import { BeatsPage } from "@/components/pages/beats";
 
 const Beats = () => {
 	return <BeatsPage />;
