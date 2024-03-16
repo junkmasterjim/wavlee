@@ -87,7 +87,7 @@ const Page = () => {
 				<Separator className="mt-4" />
 			</div>
 			<div className="mt-8 grid lg:grid-flow-col grid-flow-row gap-4 auto-cols-fr">
-				<div className="max-w-prose bg-black">
+				<div className="max-w-prose">
 					<Accordion type="single" collapsible>
 						<h3 className="text-2xl sm:text-3xl leading-relaxed text-foreground font-semibold mb-4">
 							FAQ
