@@ -35,7 +35,9 @@ export default function RootLayout({
 						backgroundSize: "24px 24px",
 					}}
 				/>
-				<main className="relative sm:pt-36 pt-20 min-h-screen">{children}</main>
+				<main className="relative sm:pt-36 pt-20 min-h-screen pb-16">
+					{children}
+				</main>
 			</body>
 		</html>
 	);

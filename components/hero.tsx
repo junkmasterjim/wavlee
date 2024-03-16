@@ -7,7 +7,7 @@ import { DesktopCube, HeroCube, MobileCube } from "./cube";
 function Hero() {
 	return (
 		<section
-			className="container min-h-screen relative z-10 grid grid-cols-1 sm:grid-cols-5 gap-4 sm:gap-16 pb-16"
+			className="container min-h-screen relative z-10 grid grid-cols-1 sm:grid-cols-5 gap-4 sm:gap-16"
 			id="home"
 		>
 			{/* Hero - 5 Cols */}
