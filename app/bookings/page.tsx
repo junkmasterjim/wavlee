@@ -13,8 +13,9 @@ const FAQ: { q: string; a: string | string[]; footnote?: string }[] = [
 		q: "What are your studio hours?",
 		a: [
 			"Studio hours are listed below:",
-			"Weekdays: 8pm-12am",
-			"Weekends: 3pm-12am",
+			"Saturday: 6pm-12am",
+			"Sunday: 3pm-12am",
+			"Mon - Fri: 8pm-12am",
 		],
 	},
 	{
