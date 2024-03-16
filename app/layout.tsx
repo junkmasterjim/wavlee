@@ -17,7 +17,13 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={cn(playfair, "relative")}>
+			<body
+				className={cn(playfair, "relative")}
+				style={{
+					background:
+						"radial-gradient(ellipse at top center, #191919 0%, #050505 100%)",
+				}}
+			>
 				<Navbar />
 				<Image
 					src={"/wavLee.jpeg"}

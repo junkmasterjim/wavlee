@@ -18,24 +18,37 @@ const Page = () => {
 
 			<div className="flex mt-8 gap-3 flex-wrap justify-stretch">
 				{/* Card */}
-				<div className="bg-muted-foreground/5 text-muted-foreground backdrop-blur p-2 aspect-[5/7] rounded-sm space-y-4 border border-muted/50">
-					<div className="aspect-square relative size-60">
-						<Image className="rounded-sm" src="" fill alt="" />
-					</div>
-					<div className="flex justify-between">
-						<p>Kit Name</p>
-						<p className="text-muted-foreground font-semibold">Free</p>
-					</div>
-					<Button
-						className="w-full rounded-sm text-muted-foreground border-accent/50"
-						variant={"outline"}
-					>
-						Download
-					</Button>
-				</div>
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
 			</div>
 		</section>
 	);
 };
 
 export default Page;
+
+const ProductCard = () => {
+	return (
+		<div className="bg-muted-foreground/5 text-muted-foreground backdrop-blur p-2 aspect-[5/7] rounded-sm space-y-4 border border-muted/50">
+			<div className="aspect-square relative size-60">
+				<Image className="rounded-sm" src="" fill alt="" />
+			</div>
+			<div className="flex justify-between">
+				<p>Kit Name</p>
+				<p className="text-muted-foreground font-semibold">Free</p>
+			</div>
+			<Button
+				className="w-full rounded-sm text-muted-foreground border-accent/50"
+				variant={"outline"}
+			>
+				Download
+			</Button>
+		</div>
+	);
+};
