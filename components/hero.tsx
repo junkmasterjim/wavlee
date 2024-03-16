@@ -54,39 +54,41 @@ function Hero() {
 				{/* social links */}
 				<div className="flex flex-wrap justify-between text-muted-foreground items-center">
 					<div className="flex gap-2">
-						<Link href={"https://www.instagram.com/Wav_Lee/"} target="_blank">
-							<Button
-								size={"icon"}
-								asChild
-								className="rounded-full"
-								variant={"ghost"}
-							>
-								<FaInstagram className="size-5" />
-							</Button>
-						</Link>
-						<Link target="_blank" href={"https://twitter.com/Wav_Lee"}>
-							<Button
-								size={"icon"}
-								asChild
-								className="rounded-full "
-								variant={"ghost"}
-							>
-								<FaTwitter className="size-5" />
-							</Button>
-						</Link>
-						<Link
-							target="_blank"
-							href={"https://www.youtube.com/channel/UCMoLMstZHA2-pMAUEdaJ2vw"}
+						<Button
+							size={"icon"}
+							asChild
+							className="rounded-full"
+							variant={"ghost"}
 						>
-							<Button
-								size={"icon"}
-								asChild
-								className="rounded-full "
-								variant={"ghost"}
+							<Link href={"https://www.instagram.com/Wav_Lee/"} target="_blank">
+								<FaInstagram className="size-5" />
+							</Link>
+						</Button>
+						<Button
+							size={"icon"}
+							asChild
+							className="rounded-full "
+							variant={"ghost"}
+						>
+							<Link target="_blank" href={"https://twitter.com/Wav_Lee"}>
+								<FaTwitter className="size-5" />
+							</Link>
+						</Button>
+						<Button
+							size={"icon"}
+							asChild
+							className="rounded-full "
+							variant={"ghost"}
+						>
+							<Link
+								target="_blank"
+								href={
+									"https://www.youtube.com/channel/UCMoLMstZHA2-pMAUEdaJ2vw"
+								}
 							>
 								<FaYoutube className="size-5" />
-							</Button>
-						</Link>
+							</Link>
+						</Button>
 					</div>
 					<a
 						href="mailto:prodbywavlee@gmail.com"
