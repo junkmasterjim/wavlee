@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import Image from "next/image";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
 	title: "Wav Lee",
@@ -46,6 +47,7 @@ export default function RootLayout({
 						{children}
 					</main>
 				</div>
+				<Toaster />
 			</body>
 		</html>
 	);
