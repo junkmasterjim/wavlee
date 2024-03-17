@@ -9,11 +9,14 @@ export async function POST(req: NextRequest) {
 			headers: {
 				"Content-Type": "application/json",
 			},
+			status: 200,
 		});
 	} else
 		return new NextResponse(JSON.stringify({ verified: false }), {
 			headers: {
 				"Content-Type": "application/json",
 			},
+			// unauthorized
+			status: 401,
 		});
 }
