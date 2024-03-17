@@ -12,8 +12,15 @@ import { Separator } from "@/components/ui/separator";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { useRef } from "react";
+import { cn } from "@/lib/utils";
 
-const ContactForm = () => {
+const ContactForm = ({
+	minimal,
+	generalText,
+}: {
+	minimal?: boolean;
+	generalText?: boolean;
+}) => {
 	const form = useRef<HTMLFormElement>(null);
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -44,9 +51,17 @@ const ContactForm = () => {
 	};
 
 	return (
-		<Card className="border-muted/50 bg-background/25 backdrop-blur lg:mt-12">
+		<Card
+			className={cn(
+				minimal
+					? "bg-card/0 max-w-none w-full border-0 backdrop-blur-sm lg:mt-0"
+					: "border-muted/50 bg-background/25 backdrop-blur lg:mt-12"
+			)}
+		>
 			<CardHeader>
-				<CardTitle>Still have questions?</CardTitle>
+				<CardTitle>
+					{generalText ? "Get in touch with me" : "Still have questions?"}
+				</CardTitle>
 				<CardDescription className="pb-2">
 					Feel free to reach out to me with any questions or concerns you may
 					have. I will get back to you as soon as possible.

@@ -17,6 +17,7 @@ import {
 	SheetTrigger,
 } from "./ui/sheet";
 import { Separator } from "./ui/separator";
+import { ContactDialog } from "./contact-dialog";
 
 function Navbar() {
 	const pathname = usePathname();
@@ -32,7 +33,6 @@ function Navbar() {
 		{ label: "Beats", href: "/beats" },
 		{ label: "Downloads", href: "/downloads" },
 		{ label: "Bookings", href: "/bookings" },
-		{ label: "Contact", href: "/contact" },
 	];
 
 	return (
@@ -99,6 +99,19 @@ function Navbar() {
 									</Link>
 								</Button>
 							))}
+							<ContactDialog
+								trigger={
+									<Button
+										variant={"ghost"}
+										className={cn("h-fit px-2 py-1 hover:bg-inherit text-base")}
+										asChild
+									>
+										<span className="font-medium relative text-foreground">
+											Contact
+										</span>
+									</Button>
+								}
+							/>
 						</div>
 					</SheetContent>
 				</Sheet>
@@ -130,13 +143,26 @@ function Navbar() {
 									)}
 								</Link>
 							</Button>
-							{index !== tabs.length - 1 && (
+							{index !== tabs.length && (
 								<span className="select-none pointer-events-none text-muted-foreground">
 									/
 								</span>
 							)}
 						</span>
 					))}
+					<ContactDialog
+						trigger={
+							<Button
+								variant={"ghost"}
+								className={cn("h-fit px-2 py-1 hover:bg-inherit")}
+								asChild
+							>
+								<span className="font-medium relative text-foreground">
+									Contact
+								</span>
+							</Button>
+						}
+					/>
 				</motion.menu>
 			</div>
 		</nav>
