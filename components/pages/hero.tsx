@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import Link from "next/link";
 import { DesktopCube, HeroCube, MobileCube } from "../cube";
+import { ContactDialog } from "../contact-dialog";
 
 function Hero() {
 	return (
@@ -42,13 +43,16 @@ function Hero() {
 						<Link href={"/bookings"}>Book a session</Link>
 					</Button>
 					<span className="select-none pointer-events-none">/</span>
-					<Button
-						asChild
-						className="hover:text-foreground not-prose"
-						variant={"link"}
-					>
-						<Link href={"/"}>Contact</Link>
-					</Button>
+					<ContactDialog
+						trigger={
+							<Button
+								className="hover:text-foreground text-muted-foreground not-prose"
+								variant={"link"}
+							>
+								Contact
+							</Button>
+						}
+					/>
 				</div>
 				<Separator />
 				{/* social links */}
