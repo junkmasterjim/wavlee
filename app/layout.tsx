@@ -17,15 +17,15 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" className="bg-background text-foreground">
 			<body
-				className={cn(playfair, "relative")}
+				className={cn(playfair)}
 				style={{
 					background:
 						"radial-gradient(ellipse at top center, #191919 0%, #050505 100%)",
 				}}
 			>
-				<div id="__next">
+				<div id="__next" className="relative">
 					<Navbar />
 					<Image
 						src={"/wavLee.jpeg"}
