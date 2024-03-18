@@ -55,7 +55,8 @@ const ContactForm = ({
 			className={cn(
 				minimal
 					? "bg-card/0 max-w-none w-full border-0 backdrop-blur-sm lg:mt-0"
-					: "border-muted/50 bg-background/25 backdrop-blur lg:mt-12"
+					: "border-muted/50 bg-background/25 backdrop-blur lg:mt-12",
+				"h-fit"
 			)}
 		>
 			<CardHeader>
