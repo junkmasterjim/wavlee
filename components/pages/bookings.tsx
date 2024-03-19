@@ -1,16 +1,7 @@
 "use client";
 import CalendlyButton from "@/components/calendly-button";
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
 import { ContactForm } from "../contact-form";
-
-import { useQuery } from "@tanstack/react-query";
 import FAQ from "../faq";
 
 const Bookings = () => {
