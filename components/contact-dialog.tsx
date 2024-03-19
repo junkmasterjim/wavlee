@@ -4,7 +4,9 @@ import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 function ContactDialog({ trigger }: { trigger: React.ReactNode }) {
 	return (
 		<Dialog>
-			<DialogTrigger asChild>{trigger}</DialogTrigger>
+			<DialogTrigger asChild className="cursor-pointer">
+				{trigger}
+			</DialogTrigger>
 			<DialogContent className="border-muted/50">
 				<ContactForm minimal generalText />
 			</DialogContent>
