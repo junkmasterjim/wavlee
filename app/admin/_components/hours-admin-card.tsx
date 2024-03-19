@@ -48,7 +48,7 @@ const HoursAdminCard = () => {
 				<CardHeader>
 					<CardTitle>Studio Info</CardTitle>
 					<CardDescription>
-						Edit your hours here, they'll be reflected in your FAQ.
+						Edit your hours here, they&apos;ll be reflected in your FAQ.
 					</CardDescription>
 				</CardHeader>
 
