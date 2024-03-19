@@ -7,66 +7,118 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 
-import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+import {
+	Table,
+	TableBody,
+	TableCell,
+	TableHead,
+	TableHeader,
+	TableRow,
+} from "@/components/ui/table";
+import { HoursAdminCard } from "./hours-admin-card";
 
 function AdminPanel() {
 	return (
-		<Tabs defaultValue="account">
+		<Tabs defaultValue="cube">
 			<TabsList className="grid w-full auto-cols-fr auto-rows-auto sm:grid-flow-col grid-flow-row h-fit">
-				<TabsTrigger value="account">Cube</TabsTrigger>
-				<TabsTrigger value="password">Downloads</TabsTrigger>
-				<TabsTrigger value="FAQ">FAQ</TabsTrigger>
+				<TabsTrigger value="cube">Cube Images</TabsTrigger>
+				<TabsTrigger value="downloads">Downloads</TabsTrigger>
+				<TabsTrigger value="hours">Studio Hours</TabsTrigger>
 			</TabsList>
-			<TabsContent value="account">
+
+			<TabsContent value="cube">
+				{/* <CubeAdminCard /> */}
 				<Card>
 					<CardHeader>
-						<CardTitle>Account</CardTitle>
+						<CardTitle>Cube Images</CardTitle>
 						<CardDescription>
-							Make changes to your account here. Click save when you&apos;re
-							done.
+							Edit the cube images that appear on the home page.
 						</CardDescription>
 					</CardHeader>
-					<CardContent className="space-y-2">
-						<div className="space-y-1">
-							<Label htmlFor="name">Name</Label>
-							<Input id="name" defaultValue="Pedro Duarte" />
-						</div>
-						<div className="space-y-1">
-							<Label htmlFor="username">Username</Label>
-							<Input id="username" defaultValue="@peduarte" />
-						</div>
-					</CardContent>
-					<CardFooter>
-						<Button>Save changes</Button>
-					</CardFooter>
+					<form action="">
+						<CardContent className="space-y-2">
+							<Table>
+								<TableHeader>
+									<TableRow>
+										<TableHead />
+										<TableHead>Source</TableHead>
+										<TableHead>Alt Text</TableHead>
+										<TableHead className="text-right">Actions</TableHead>
+									</TableRow>
+								</TableHeader>
+								<TableBody>
+									{/* Table Data */}
+
+									{Array.from({ length: 6 }).map((_, i) => (
+										<TableRow key={i}>
+											<TableCell className="font-medium">ID</TableCell>
+											<TableCell className="max-w-[100px] truncate">
+												https://source.unsplash.com/random/200x200
+											</TableCell>
+											<TableCell>Foobar - Untitled</TableCell>
+											<TableCell className="text-right">Actions</TableCell>
+										</TableRow>
+									))}
+								</TableBody>
+							</Table>
+						</CardContent>
+						<CardFooter>
+							<Button>Save changes</Button>
+						</CardFooter>
+					</form>
 				</Card>
 			</TabsContent>
-			<TabsContent value="password">
+
+			<TabsContent value="downloads">
+				{/* <DownloadsAdminCard /> */}
 				<Card>
 					<CardHeader>
-						<CardTitle>Password</CardTitle>
-						<CardDescription>
-							Change your password here. After saving, you&apos;ll be logged
-							out.
-						</CardDescription>
+						<CardTitle>Downloads</CardTitle>
+						<CardDescription>Edit your downloads page here.</CardDescription>
 					</CardHeader>
-					<CardContent className="space-y-2">
-						<div className="space-y-1">
-							<Label htmlFor="current">Current password</Label>
-							<Input id="current" type="password" />
-						</div>
-						<div className="space-y-1">
-							<Label htmlFor="new">New password</Label>
-							<Input id="new" type="password" />
-						</div>
-					</CardContent>
-					<CardFooter>
-						<Button>Save password</Button>
-					</CardFooter>
+					<form action="">
+						<CardContent className="space-y-2">
+							<Table>
+								<TableHeader>
+									<TableRow>
+										<TableHead />
+										<TableHead>Name</TableHead>
+										<TableHead>Image Src</TableHead>
+										<TableHead>Link</TableHead>
+										<TableHead className="text-right">Actions</TableHead>
+									</TableRow>
+								</TableHeader>
+								<TableBody>
+									{/* Table Data */}
+
+									{Array.from({ length: 6 }).map((_, i) => (
+										<TableRow key={i}>
+											<TableCell className="font-medium">ID</TableCell>
+											<TableCell className="font-medium flex items-center">
+												<span className="bg-white size-5 mr-2 rounded-full" />
+												Name
+											</TableCell>
+											<TableCell className="max-w-[100px] truncate">
+												https://source.unsplash.com/random/200x200
+											</TableCell>
+											<TableCell>Foobar - Untitled</TableCell>
+											<TableCell className="text-right">Actions</TableCell>
+										</TableRow>
+									))}
+								</TableBody>
+							</Table>
+						</CardContent>
+						<CardFooter>
+							<Button>Save changes</Button>
+						</CardFooter>
+					</form>
 				</Card>
+			</TabsContent>
+			<TabsContent value="hours">
+				<HoursAdminCard />
 			</TabsContent>
 		</Tabs>
 	);

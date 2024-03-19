@@ -7,6 +7,10 @@ import { toast } from "sonner";
 import { getCookie, setCookie } from "cookies-next";
 import { AdminPanel } from "./_components/admin-panel";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
+
 const Admin = () => {
 	const [loading, setLoading] = useState(true);
 	const [verified, setVerified] = useState(false);
@@ -89,9 +93,11 @@ const Admin = () => {
 	}
 
 	return (
-		<div className="container">
-			<AdminPanel />
-		</div>
+		<QueryClientProvider client={queryClient}>
+			<div className="container">
+				<AdminPanel />
+			</div>
+		</QueryClientProvider>
 	);
 };
 
