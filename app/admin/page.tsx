@@ -94,7 +94,12 @@ const Admin = () => {
 
 	return (
 		<QueryClientProvider client={queryClient}>
-			<div className="container">
+			<div className="container space-y-4">
+				<h1 className="text-4xl font-bold">Admin</h1>
+				<p className="leading-none text-muted-foreground">
+					Edit the content of your website here.
+				</p>
+
 				<AdminPanel />
 			</div>
 		</QueryClientProvider>

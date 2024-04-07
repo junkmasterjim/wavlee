@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 export const GET = async () => {
 	const prisma = new PrismaClient();
+
 	try {
 		const data = await prisma.cubeImages.findMany();
 

@@ -19,6 +19,7 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 import { HoursAdminCard } from "./hours-admin-card";
+import Image from "next/image";
 
 function AdminPanel() {
 	return (
@@ -55,8 +56,20 @@ function AdminPanel() {
 									{Array.from({ length: 6 }).map((_, i) => (
 										<TableRow key={i}>
 											<TableCell className="font-medium">ID</TableCell>
-											<TableCell className="max-w-[100px] truncate">
-												https://source.unsplash.com/random/200x200
+											<TableCell className="max-w-[250px] flex items-center">
+												<Image
+													unoptimized
+													src={"https://source.unsplash.com/random/200x200"}
+													width={24}
+													height={24}
+													alt="random"
+													className="rounded-full mr-2"
+												/>
+												<p className="truncate ">
+													{"https://source.unsplash.com/random/200x200"
+														.split("//")
+														.pop()}
+												</p>
 											</TableCell>
 											<TableCell>Foobar - Untitled</TableCell>
 											<TableCell className="text-right">Actions</TableCell>
@@ -98,11 +111,20 @@ function AdminPanel() {
 										<TableRow key={i}>
 											<TableCell className="font-medium">ID</TableCell>
 											<TableCell className="font-medium flex items-center">
-												<span className="bg-white size-5 mr-2 rounded-full" />
+												<Image
+													unoptimized
+													src={"https://source.unsplash.com/random/200x200"}
+													width={24}
+													height={24}
+													alt="random"
+													className="rounded-full mr-2"
+												/>
 												Name
 											</TableCell>
 											<TableCell className="max-w-[100px] truncate">
-												https://source.unsplash.com/random/200x200
+												{"https://source.unsplash.com/random/200x200"
+													.split("//")
+													.pop()}
 											</TableCell>
 											<TableCell>Foobar - Untitled</TableCell>
 											<TableCell className="text-right">Actions</TableCell>
