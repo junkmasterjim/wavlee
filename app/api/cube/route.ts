@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async () => {
 	const prisma = new PrismaClient();
@@ -25,5 +25,40 @@ export const GET = async () => {
 			}
 		);
 	}
-	const res = await prisma.cubeImages.findMany();
+};
+
+export const PATCH = async (req: NextRequest) => {
+	const prisma = new PrismaClient();
+
+	const { id, ...data } = await req.json();
+
+	if (!id) {
+		return new NextResponse("Bad Request", {
+			status: 400,
+			statusText: "Bad Request: id is required",
+		});
+	}
+
+	if (Object.keys(data).length === 0) {
+		return new NextResponse("Bad Request", {
+			status: 400,
+			statusText: "Bad Request: at least one field is required",
+		});
+	}
+
+	try {
+		const updatedCubeImages = await prisma.cubeImages.update({
+			where: { id },
+			data,
+		});
+		return new NextResponse(JSON.stringify(updatedCubeImages), {
+			status: 200,
+		});
+	} catch (error) {
+		console.error(error);
+		return new NextResponse("Internal Server Error", {
+			status: 500,
+			statusText: "Internal Server Error: " + error,
+		});
+	}
 };

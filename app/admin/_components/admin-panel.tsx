@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/table";
 import { HoursAdminCard } from "./hours-admin-card";
 import Image from "next/image";
+import CubeAdminCard from "./cube-admin-card";
 
 function AdminPanel() {
 	return (
@@ -31,58 +32,7 @@ function AdminPanel() {
 			</TabsList>
 
 			<TabsContent value="cube">
-				{/* <CubeAdminCard /> */}
-				<Card>
-					<CardHeader>
-						<CardTitle>Cube Images</CardTitle>
-						<CardDescription>
-							Edit the cube images that appear on the home page.
-						</CardDescription>
-					</CardHeader>
-					<form action="">
-						<CardContent className="space-y-2">
-							<Table>
-								<TableHeader>
-									<TableRow>
-										<TableHead />
-										<TableHead>Source</TableHead>
-										<TableHead>Alt Text</TableHead>
-										<TableHead className="text-right">Actions</TableHead>
-									</TableRow>
-								</TableHeader>
-								<TableBody>
-									{/* Table Data */}
-
-									{Array.from({ length: 6 }).map((_, i) => (
-										<TableRow key={i}>
-											<TableCell className="font-medium">ID</TableCell>
-											<TableCell className="max-w-[250px] flex items-center">
-												<Image
-													unoptimized
-													src={"https://source.unsplash.com/random/200x200"}
-													width={24}
-													height={24}
-													alt="random"
-													className="rounded-full mr-2"
-												/>
-												<p className="truncate ">
-													{"https://source.unsplash.com/random/200x200"
-														.split("//")
-														.pop()}
-												</p>
-											</TableCell>
-											<TableCell>Foobar - Untitled</TableCell>
-											<TableCell className="text-right">Actions</TableCell>
-										</TableRow>
-									))}
-								</TableBody>
-							</Table>
-						</CardContent>
-						<CardFooter>
-							<Button>Save changes</Button>
-						</CardFooter>
-					</form>
-				</Card>
+				<CubeAdminCard />
 			</TabsContent>
 
 			<TabsContent value="downloads">
