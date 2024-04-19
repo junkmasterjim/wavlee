@@ -125,11 +125,7 @@ const CubeAdminCard = () => {
 													alt={img.alt}
 													className="rounded-full mr-2"
 												/>
-												<p className="truncate ">
-													{"https://source.unsplash.com/random/200x200"
-														.split("//")
-														.pop()}
-												</p>
+												<p className="truncate">{img.src}</p>
 											</TableCell>
 											<TableCell>{img.alt}</TableCell>
 
