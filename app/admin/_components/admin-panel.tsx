@@ -21,6 +21,7 @@ import {
 import { HoursAdminCard } from "./hours-admin-card";
 import Image from "next/image";
 import CubeAdminCard from "./cube-admin-card";
+import DownloadsAdminCard from "./downloads-admin-card";
 
 function AdminPanel() {
 	return (
@@ -36,58 +37,7 @@ function AdminPanel() {
 			</TabsContent>
 
 			<TabsContent value="downloads">
-				{/* <DownloadsAdminCard /> */}
-				<Card>
-					<CardHeader>
-						<CardTitle>Downloads</CardTitle>
-						<CardDescription>Edit your downloads page here.</CardDescription>
-					</CardHeader>
-					<form action="">
-						<CardContent className="space-y-2">
-							<Table>
-								<TableHeader>
-									<TableRow>
-										<TableHead />
-										<TableHead>Name</TableHead>
-										<TableHead>Image Src</TableHead>
-										<TableHead>Link</TableHead>
-										<TableHead className="text-right">Actions</TableHead>
-									</TableRow>
-								</TableHeader>
-								<TableBody>
-									{/* Table Data */}
-
-									{Array.from({ length: 6 }).map((_, i) => (
-										<TableRow key={i}>
-											<TableCell className="font-medium">ID</TableCell>
-											<TableCell className="font-medium flex items-center">
-												<Image
-													unoptimized
-													src={"https://source.unsplash.com/random/200x200"}
-													width={24}
-													height={24}
-													alt="random"
-													className="rounded-full mr-2"
-												/>
-												Name
-											</TableCell>
-											<TableCell className="max-w-[100px] truncate">
-												{"https://source.unsplash.com/random/200x200"
-													.split("//")
-													.pop()}
-											</TableCell>
-											<TableCell>Foobar - Untitled</TableCell>
-											<TableCell className="text-right">Actions</TableCell>
-										</TableRow>
-									))}
-								</TableBody>
-							</Table>
-						</CardContent>
-						<CardFooter>
-							<Button>Save changes</Button>
-						</CardFooter>
-					</form>
-				</Card>
+				<DownloadsAdminCard />
 			</TabsContent>
 			<TabsContent value="hours">
 				<HoursAdminCard />
