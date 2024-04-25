@@ -41,6 +41,15 @@ const HoursAdminCard = () => {
 		close: "",
 	});
 
+	const { data, isPending, isError, error, refetch } = useQuery({
+		queryKey: ["hours"],
+		queryFn: async () => {
+			const res = await fetch("/api/studio-hours");
+			const data = await res.json();
+			return data;
+		},
+	});
+
 	const handlePatch = async () => {
 		try {
 			const response = await fetch("/api/studio-hours", {
@@ -51,21 +60,13 @@ const HoursAdminCard = () => {
 				body: JSON.stringify(input),
 			});
 			const json = await response.json();
+			refetch();
 			return json;
 		} catch (error) {
 			console.error(error);
 			throw new Error("Error updating hours");
 		}
 	};
-
-	const { data, isPending, isError, error } = useQuery({
-		queryKey: ["hours"],
-		queryFn: async () => {
-			const res = await fetch("/api/studio-hours");
-			const data = await res.json();
-			return data;
-		},
-	});
 
 	if (isPending)
 		return (

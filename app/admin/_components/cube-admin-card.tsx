@@ -28,7 +28,7 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { Menu } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const CubeAdminCard = () => {
@@ -38,6 +38,15 @@ const CubeAdminCard = () => {
 	}>({
 		src: "",
 		alt: "",
+	});
+
+	const { data, isPending, isError, error, refetch } = useQuery({
+		queryKey: ["cube"],
+		queryFn: async () => {
+			const res = await fetch("/api/cube");
+			const data = await res.json();
+			return data;
+		},
 	});
 
 	const handlePatch = async () => {
@@ -50,21 +59,13 @@ const CubeAdminCard = () => {
 				body: JSON.stringify(input),
 			});
 			const json = await response.json();
+			refetch();
 			return json;
 		} catch (error) {
 			console.error(error);
 			throw new Error("Error updating cube");
 		}
 	};
-
-	const { data, isPending, isError, error } = useQuery({
-		queryKey: ["cube"],
-		queryFn: async () => {
-			const res = await fetch("/api/cube");
-			const data = await res.json();
-			return data;
-		},
-	});
 
 	if (isPending)
 		return (

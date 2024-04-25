@@ -51,6 +51,15 @@ const DownloadsAdminCard = () => {
 		url: "",
 	});
 
+	const { data, isPending, isError, error, refetch } = useQuery({
+		queryKey: ["downloads"],
+		queryFn: async () => {
+			const res = await fetch("/api/downloads");
+			const data = await res.json();
+			return data;
+		},
+	});
+
 	// const handlePatch = async () => {
 	// 	try {
 	// 		const response = await fetch("/api/downloads", {
@@ -83,6 +92,7 @@ const DownloadsAdminCard = () => {
 				body: JSON.stringify(input),
 			});
 			const json = await response.json();
+			refetch();
 			return json;
 		} catch (error) {
 			console.error(error);
@@ -90,15 +100,6 @@ const DownloadsAdminCard = () => {
 			throw new Error("Error adding download");
 		}
 	};
-
-	const { data, isPending, isError, error } = useQuery({
-		queryKey: ["downloads"],
-		queryFn: async () => {
-			const res = await fetch("/api/downloads");
-			const data = await res.json();
-			return data;
-		},
-	});
 
 	if (isPending)
 		return (
